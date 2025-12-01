@@ -1,5 +1,5 @@
 import { useMemo, useState, useEffect } from 'react'
-import axios from 'axios'
+import { mockData } from '../data/mockData'
 
 const usePlanFilter = () => {
   const initialFilters = {
@@ -20,8 +20,10 @@ const usePlanFilter = () => {
     const fetchPlans = async () => {
       try {
         setLoading(true)
-        const response = await axios.get(`${import.meta.env.VITE_BACK_URL}/api/plans`)
-        setAllPlans(response.data)
+        //목업 데이터로 대체
+        //const response = await axios.get(`${import.meta.env.VITE_BACK_URL}/api/plans`)
+        await new Promise(resolve => setTimeout(resolve, 200)) // 의도적인 네트워크 로딩 (로딩ui)
+        setAllPlans(mockData)
         setError(null)
       } catch (err) {
         console.error('API 요청 실패:', err)
