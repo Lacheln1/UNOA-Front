@@ -39,29 +39,30 @@ export default function RegisterPage() {
   }
 
   const handleCheckDuplicate = async () => {
-    const trimmedId = userId.trim()
+    alert('현재 이용하실 수 없는 기능입니다.')
+    // const trimmedId = userId.trim()
 
-    if (!trimmedId) {
-      showErrorToast('아이디를 입력해주세요.')
-      setUserIdCheckStatus('error')
-      return
-    }
+    // if (!trimmedId) {
+    //   showErrorToast('아이디를 입력해주세요.')
+    //   setUserIdCheckStatus('error')
+    //   return
+    // }
 
-    if (!/^[a-z0-9]{4,16}$/.test(trimmedId)) {
-      showErrorToast('사용할 수 없는 아이디입니다.')
-      setUserIdCheckStatus('error')
-      return
-    }
+    // if (!/^[a-z0-9]{4,16}$/.test(trimmedId)) {
+    //   showErrorToast('사용할 수 없는 아이디입니다.')
+    //   setUserIdCheckStatus('error')
+    //   return
+    // }
 
-    try {
-      await checkUserIdDuplicate(trimmedId)
-      setUserIdCheckStatus('success')
-      showSuccessToast('사용 가능한 아이디입니다.')
-    } catch (err) {
-      const msg = err?.response?.data?.message || '중복 확인 중 오류가 발생했습니다.'
-      showErrorToast(msg)
-      setUserIdCheckStatus('error')
-    }
+    // try {
+    //   await checkUserIdDuplicate(trimmedId)
+    //   setUserIdCheckStatus('success')
+    //   showSuccessToast('사용 가능한 아이디입니다.')
+    // } catch (err) {
+    //   const msg = err?.response?.data?.message || '중복 확인 중 오류가 발생했습니다.'
+    //   showErrorToast(msg)
+    //   setUserIdCheckStatus('error')
+    // }
   }
 
   const handleSubmit = async e => {
@@ -99,34 +100,36 @@ export default function RegisterPage() {
     }
 
     try {
-      const payload = {
-        name,
-        userId,
-        password,
-        isUplus,
-        planInfo: isUplus === 'yes' ? {} : null,
-      }
+      alert('현재 이용하실 수 없는 기능입니다.')
+      // const payload = {
+      //   name,
+      //   userId,
+      //   password,
+      //   isUplus,
+      //   planInfo: isUplus === 'yes' ? {} : null,
+      // }
 
-      await registerUser(payload)
+      // await registerUser(payload)
 
-      setName('')
-      setUserId('')
-      setPassword('')
-      setPasswordConfirm('')
-      setIsUplus('')
-      setUserIdCheckStatus('')
-      setIsPasswordConfirmTouched(false)
+      // setName('')
+      // setUserId('')
+      // setPassword('')
+      // setPasswordConfirm('')
+      // setIsUplus('')
+      // setUserIdCheckStatus('')
+      // setIsPasswordConfirmTouched(false)
 
-      showSuccessRegister({
-        message: '로그인 후 UNOA를 시작해보세요.',
-      })
+      // showSuccessRegister({
+      //   message: '로그인 후 UNOA를 시작해보세요.',
+      // })
     } catch {
       showErrorToast('회원가입에 실패했습니다.')
     }
   }
 
   const handleKakaoLogin = () => {
-    window.location.href = `${API_URL}/api/auth/kakao/login`
+    alert('현재 이용하실 수 없는 기능입니다.')
+    // window.location.href = `${API_URL}/api/auth/kakao/login`
   }
 
   return (

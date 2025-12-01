@@ -34,7 +34,13 @@ function ChatbotPage() {
   }
 
   if (!isConnected) {
-    return <LoadingScreen />
+    return (
+      <div className="flex min-h-screen flex-col items-center justify-center bg-gray-100 dark:bg-gray-900">
+        <p className="mt-4 text-lg font-semibold text-gray-700 dark:text-gray-200">
+          😢 현재 이용하실 수 없는 기능입니다.
+        </p>
+      </div>
+    )
   }
 
   return (

@@ -43,13 +43,14 @@ export default function LoginPage() {
     if (hasError) return
 
     try {
-      await loginUser({ userId, password })
-      await login()
+      alert('현재 이용하실 수 없는 기능입니다.')
+      // await loginUser({ userId, password })
+      // await login()
 
       setUserId('')
       setPassword('')
-      showDefaultToast('NOA가 요금제를 추천해드릴게요!')
-      navigate('/chatbot')
+      // showDefaultToast('NOA가 요금제를 추천해드릴게요!')
+      // navigate('/chatbot')
     } catch {
       showErrorToast(
         <>
@@ -61,7 +62,8 @@ export default function LoginPage() {
   }
 
   const handleKakaoLogin = () => {
-    window.location.href = `${API_URL}/api/auth/kakao/login`
+    alert('현재 이용하실 수 없는 기능입니다.')
+    // window.location.href = `${API_URL}/api/auth/kakao/login`
   }
 
   return (
