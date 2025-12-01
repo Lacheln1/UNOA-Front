@@ -66,20 +66,14 @@ export default function Header() {
             ))}
           </div>
 
-          {user ? (
-            <button onClick={handleLogout} className={navLinkBaseClass}>
-              로그아웃
-            </button>
-          ) : (
-            <NavLink
-              to="/login"
-              className={({ isActive }) =>
-                `${navLinkBaseClass} ${isActive ? navLinkActiveClass : ''}`
-              }
-            >
-              로그인
-            </NavLink>
-          )}
+          <NavLink
+            to="/login"
+            className={({ isActive }) =>
+              `${navLinkBaseClass} ${isActive ? navLinkActiveClass : ''}`
+            }
+          >
+            로그인
+          </NavLink>
         </div>
 
         <button
