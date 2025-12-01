@@ -8,7 +8,7 @@ import Footer from '@/components/Footer'
 import ScrollToTopButton from '@/components/ScrollToTopButton'
 
 export default function MyPage() {
-  const { user } = useAuth()
+  const user = false
   let content
 
   if (!user) {
