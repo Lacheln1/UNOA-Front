@@ -176,6 +176,7 @@ const PlanCardSystem = ({ onFilterModalState }) => {
   const handleApplyFilters = () => {
     applyFilters()
     setIsFilterOpen(false)
+    setResetTrigger(prev => prev + 1)
   }
 
   //전체 초기화(필터,정렬,페이지네이션)
@@ -183,6 +184,7 @@ const PlanCardSystem = ({ onFilterModalState }) => {
     resetFilters()
     setCurrentSort('popularity')
     setCurrentAgeGroup('all')
+    setResetTrigger(prev => prev + 1)
   }
 
   // 로딩 상태 처리

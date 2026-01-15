@@ -6,10 +6,12 @@ import unoaXimg from '@/assets/유노아x팻말.png'
 //요금제 카드 그리드 컴포넌트
 const PlanGrid = ({ plans, onResetFilters, resetTrigger }) => {
   const [visibleCount, setVisibleCount] = useState(6) //초기에 보여줄 카드수
+  const [animationKey, setAnimationKey] = useState(0) // 애니메이션 트리거용
 
   //탭 변경되면 페이지네이션 초기화
   useEffect(() => {
     setVisibleCount(6)
+    setAnimationKey(prev => prev + 1)
   }, [resetTrigger])
 
   const visiblePlans = useMemo(() => {
@@ -52,7 +54,7 @@ const PlanGrid = ({ plans, onResetFilters, resetTrigger }) => {
 
   return (
     <>
-      <div className={styles.planGrid}>
+      <div className={styles.planGrid} key={animationKey}>
         {visiblePlans.map(plan => (
           <PlanCard key={plan._id} plan={plan} />
         ))}
